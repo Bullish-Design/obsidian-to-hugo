@@ -1,5 +1,5 @@
 [project]
-name = "obsidian-to-hugo"
+name = "obsidian_to_hugo"
 dynamic = ["version", "dependencies"]
 
 [project.scripts]
