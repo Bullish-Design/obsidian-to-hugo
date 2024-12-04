@@ -1,9 +1,9 @@
 [project]
-name = "python_parser"
+name = "obsidian-to-hugo"
 dynamic = ["version", "dependencies"]
 
 [project.scripts]
-# main = "python_parser.src.main"
+# main = "obsidian-to-hugo.src.main"
 
 [tool.setuptools.dynamic]
 dependencies = { file = "requirements.txt" }
