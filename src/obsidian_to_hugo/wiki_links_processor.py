@@ -4,6 +4,7 @@ Utilities to extract wiki links from text and turn them into hugo links.
 
 from typing import TypedDict, List
 import re
+from src.config import WEBSITE_BASE_URL
 
 
 WikiLink = TypedDict("WikiLink", {"wiki_link": str, "link": str, "text": str})
@@ -63,7 +64,9 @@ def wiki_link_to_hugo_link(wiki_link: WikiLink) -> str:
             if ("text" in wiki_link and wiki_link["text"] != link_combined)
             else ""
         )
-        hugo_link = f'{{{{< figure src="{link_combined}" {caption_tag} >}}}}'
+        hugo_link = (
+            f'{{{{< figure src="{WEBSITE_BASE_URL + link_combined}" {caption_tag} >}}}}'
+        )
     else:
         hugo_link = f'[{wiki_link["text"]}]({{{{< ref "{link_combined}" >}}}})'
 
